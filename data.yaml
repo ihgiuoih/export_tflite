@@ -1,13 +1,7 @@
-path: /mnt/e/xingongkedasai
+path: . 
 train: images/train
 val: images/val
+test: images/test
 
-nc: 7                   
-names:
-  0: 'Angular Leafspot'
-  1: 'Botrytis Fruit Rot'
-  2: 'Leaf Spot'
-  3: 'Powdery Mildew'
-  4: 'Gray Mold'
-  5: 'Anthracnose'
-  6: 'Blossom Blight'
+nc: 7 
+names: ['草莓病害1', '草莓病害2', '草莓病害3', '草莓病害4', '草莓病害5', '草莓病害6', '草莓病害7'] 
