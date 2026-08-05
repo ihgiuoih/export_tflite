@@ -1,0 +1,21 @@
+name: Export TFLite INT8
+
+on: [push]
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install YOLO
+        run: pip install ultralytics tensorflow
+      - name: Export Model
+        run: yolo export model=best.pt format=tflite int8=True data=data.yaml imgsz=640
+      - name: Upload TFLite
+        uses: actions/upload-artifact@v4
+        with:
+          name: quantized_model
+          path: best_int8.tflite
