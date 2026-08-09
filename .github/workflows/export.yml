@@ -12,7 +12,7 @@ jobs:
           python-version: '3.10'
       - name: Install YOLO (stable version)
         run: |
-          pip install ultralytics==8.2.100 tensorflow opencv-python
+          pip install ultralytics==8.2.100 tensorflow opencv-python onnxscript
       - name: Export Model
         run: |
           yolo export model=best.pt format=tflite int8=True data=data.yaml imgsz=640
